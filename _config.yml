@@ -24,6 +24,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 author: Karl Sims
 github_username:  winstonjay
 
+permalink: /posts/:year/:title
+
 # Build settings
 markdown: kramdown
 theme: minima
