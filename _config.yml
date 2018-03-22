@@ -25,6 +25,7 @@ author: Karl Sims
 github_username:  winstonjay
 
 permalink: /posts/:year/:title
+show_excerpts: true
 
 # Build settings
 markdown: kramdown
