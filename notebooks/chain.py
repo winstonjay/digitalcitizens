@@ -1,18 +1,35 @@
 '''
 chain.py
 
+usage: chain.py [-h] [-l LEN] [-n NUMBER] [-k SAMPLES] [-s SEED] [-f FILE]
+
+Generate psuedo-random chains of text.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LEN, --len LEN     Chain prefix len
+  -n NUMBER, --number NUMBER
+                        Est number of words to generate
+  -k SAMPLES, --samples SAMPLES
+                        Number of samples to generate
+  -s SEED, --seed SEED  start seed for text.
+  -f FILE, --file FILE  Input file.
+
 Reference: https://golang.org/doc/codewalk/markov/
 '''
 import sys
 import random
+import argparse
 from collections import defaultdict
 
 
 def main():
-    c = Chain()
-    c.build(read_file(sys.stdin))
-    seed = random.choice(c.chain.keys())
-    print(c.generate(10, seed))
+    args = parse_args()
+    f = sys.stdin if not args.file else open(args.file)
+    c = Chain(args.number)
+    c.build(read_file(f))
+    for _ in range(args.samples):
+        print(c.generate(args.len, seed=args.seed))
 
 
 class Chain(object):
@@ -32,10 +49,16 @@ class Chain(object):
             self.chain[cat(prefix)].append(s)
             prefix = prefix[1:] + [s]
 
-    def generate(self, text_len, seed):
-        "Generate returns a string of at most n words generated from Chain."
-        words = [seed]
-        prefix = seed.split()
+    def generate(self, text_len, seed=None):
+        "generate returns a string of at most n words generated from Chain."
+        seed = seed or random.choice(self.chain.keys())
+        seed = seed.split()
+        prefix = seed[-self.n:]
+        assert len(prefix) >= self.n, "Seed too short >=%d" % self.n
+        return self._generate(text_len, seed, prefix)
+
+    def _generate(self, text_len, words, prefix):
+        "_generate executes the chain generation with properly prepared args"
         for _ in range(text_len):
             choices = self.chain[cat(prefix)]
             if not choices:
@@ -47,6 +70,21 @@ class Chain(object):
 
 
 #### Helper functions
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Generate psuedo-random chains of text.")
+    parser.add_argument('-l', '--len',
+        type=int, help='Chain prefix len', default=3)
+    parser.add_argument('-n', '--number',
+        type=int, help='Est number of words to generate', default=15)
+    parser.add_argument('-k', '--samples',
+        type=int, help='Number of samples to generate', default=1)
+    parser.add_argument('-s', '--seed',
+        type=str, help='start seed for text.')
+    parser.add_argument('-f', '--file',
+        type=str, help='Input file.')
+    return parser.parse_args()
 
 def read_file(file):
     "emit file contents delimted by whitespace"
