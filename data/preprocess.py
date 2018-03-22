@@ -39,6 +39,7 @@ def main():
     args = parser.parse_args()
     (read_fn, write_fn) = {
         "text": (text_only, write_tweets_plain),
+        "filter_text": (plain_text_filter, write_tweets_plain),
         "extended": (extended_tweet, write_tweets_csv),
         "ext_nodate": (extended_tweet_nodate, write_tweets_csv)
     }[args.io_function]
@@ -116,6 +117,18 @@ def text_only(filename):
         for line in f:
             yield clean(json.loads(line)["full_text"])
 
+def plain_text_filter(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        for line in f:
+            try:
+                text = json.loads(line)["extended_tweet"]["full_text"]
+            except:
+                text = json.loads(line)["full_text"]
+            if text == "":
+                continue
+            if "law abiding citizen" in text.lower():
+                yield text.replace("\n", "")
+
 
 #### functions for writing cleaned data to a new file.
 
@@ -158,7 +171,7 @@ def tokenize(text):
 
 def load_stopwords():
     "load stopwords and union with punction sets"
-    with open("../utils/stopwords.txt") as sw:
+    with open("../resources/stopwords.txt") as sw:
         return (set(w.strip() for w in sw)
                 | set(string.punctuation)
                 | set("’ .. . “ ” ‘ ...".split()))
