@@ -1,0 +1,40 @@
+---
+---
+// import theme css
+@import "{{ site.theme }}";
+
+
+// my custom scss.
+
+.big-img {
+    max-width: 100vw;
+    width: 80vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -40vw;
+    margin-right: -40vw;
+    @include media-query($on-laptop) {
+        max-width: 100%;
+        width: 100%;
+        left: auto;
+        right: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+table {font-size: 0.7em }
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+ h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre,
+ ul, ol, dl, figure,
+ .highlight, img {
+   margin-bottom: 24px; }
