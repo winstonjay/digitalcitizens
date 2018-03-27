@@ -10,7 +10,6 @@ import json
 import re
 import os
 import zipfile
-from tempfile import gettempdir
 
 from spamfilter import HashtagSpamFilter
 
@@ -19,23 +18,17 @@ def writer(filename, out_filename, spam_filter):
     '''read zip archive of .ndjson files and write to a single file then
     compress into a new zip archieve.'''
     # set up scoped function varibles
-    # Not sure about this tmp dir stuff, maybe needs sorting out.
-    tmp_filename = os.path.join(gettempdir(), out_filename)
-    if not os.path.exists(tmp_filename):
-        tmp_file = open(tmp_filename, "w")
-    else:
-        print("file", tmp_filename, "already exists.")
-        return
-    # write tweets to tmp file
     i = 0
-    print("Started writing to file:", tmp_filename)
-    with zipfile.ZipFile(filename) as z:
-        for fn in z.namelist()[1:]:
-            print("reading:", fn)
-            with z.open(fn) as f:
-                for line in extract_tweets(f, spam_filter):
-                    print(line, file=tmp_file)
-                    i += 1
+    tmp_filename = out_filename
+    with open(tmp_filename, "w") as tmp_file:
+        print("Started writing to file:", tmp_filename)
+        with zipfile.ZipFile(filename) as z:
+            for fn in z.namelist()[1:]:
+                print("reading:", fn)
+                with z.open(fn) as f:
+                    for line in extract_tweets(f, spam_filter):
+                        print(line, file=tmp_file)
+                        i += 1
     # log result
     print("Finished writing to file:", tmp_filename)
     print("Total tweets:", i)
@@ -47,6 +40,9 @@ def writer(filename, out_filename, spam_filter):
     with zipfile.ZipFile(z_filename, "w") as z:
         z.write(tmp_filename, compress_type=zipfile.ZIP_DEFLATED)
     print("wrote to file", z_filename)
+    # clean up
+    print("cleaning up uncompressed file", tmp_filename)
+    os.remove(tmp_filename)
 
 
 def extract_tweets(f, spam_filter):
