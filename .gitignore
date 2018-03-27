@@ -3,8 +3,9 @@ data/*
 
 env/
 .env
+log/
 
-markov_chain.py
 __pycache__
 .ipynb_checkpoints
 text_generator1.ipynb
+ca_fb_reactions.ipynb

@@ -1,19 +1,9 @@
 '''
 chain.py
 
-usage: chain.py [-h] [-l LEN] [-n NUMBER] [-k SAMPLES] [-s SEED] [-f FILE]
-
 Generate psuedo-random chains of text.
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -l LEN, --len LEN     Chain prefix len
-  -n NUMBER, --number NUMBER
-                        Est number of words to generate
-  -k SAMPLES, --samples SAMPLES
-                        Number of samples to generate
-  -s SEED, --seed SEED  start seed for text.
-  -f FILE, --file FILE  Input file.
+usage: chain.py [-h] [-l LEN] [-n NUMBER] [-k SAMPLES] [-s SEED] [-f FILE]
 
 Reference: https://golang.org/doc/codewalk/markov/
 '''
@@ -51,7 +41,7 @@ class Chain(object):
 
     def generate(self, text_len, seed=None):
         "generate returns a string of at most n words generated from Chain."
-        seed = seed or random.choice(self.chain.keys())
+        seed = seed or random.choice(list(self.chain))
         seed = seed.split()
         prefix = seed[-self.n:]
         assert len(prefix) >= self.n, "Seed too short >=%d" % self.n
