@@ -34,7 +34,7 @@ cat = " ".join
 
 if __name__ == '__main__':
 
-    filename = "fb_ca_march.zip"
-    outfile = "tags0"
+    filename = "../data/fb_ca_march.zip"
+    outfile = "../data/tags0"
 
     read_data(filename, outfile)

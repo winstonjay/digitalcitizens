@@ -14,11 +14,15 @@
 # ==============================================================================
 
 # ==============================================================================
-# MODIFICATIONS 2018:
+# MODIFICATIONS to this file 2018:
 #
-# Additional print statement have been added and the function maybe_download has
+# Additional print statements have been added and the function maybe_download has
 # been removed. Data is insted directly loaded from a zip file which is given by
-# as a commad line arg.
+# as a commad -line arg.
+#
+# Also the number of iterations has bee increase and their are additonal
+# cleaning steps taken to account for things in the data. Tbh there are alot
+# of small changes I cant remeber.
 #
 # For original see:
 #   https://www.tensorflow.org/tutorials/word2vec
@@ -47,6 +51,15 @@ import tensorflow as tf
 
 from tensorflow.contrib.tensorboard.plugins import projector
 
+
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+
+from nltk.corpus import stopwords
+
+
+plt.style.use('fivethirtyeight')
+
 # Give a folder path as an argument with '--log_dir' to save
 # TensorBoard summaries. Default is a log folder in current directory.
 current_path = os.path.dirname(os.path.realpath(sys.argv[0]))
@@ -73,16 +86,33 @@ filename = FLAGS.data_file
 # Read the data into a list of strings.
 def read_data(filename):
   """Extract the first file enclosed in a zip file as a list of words."""
+  data = []
+  spanish_words = set(stopwords.words('spanish'))
+  x = 0
   with zipfile.ZipFile(filename) as f:
-    data = tf.compat.as_str(f.read(f.namelist()[0])).split()
+    with f.open(f.namelist()[0]) as d:
+      for i, line in enumerate(d):
+        _, text, _ = tf.compat.as_str(line).split("\t")
+        for s in text.split():
+          if s in spanish_words:
+            break # we see some spanish and we are gone
+            # NOTE maybe add french next time as well.
+          # treat hashtags as words.
+          if s.startswith("#"):
+            s = s.replace("#", "")
+          if s.startswith("@"):
+            s = s.replace("@", "")
+          data.append(s)
   return data
+
+
 
 print('Reading file:', filename)
 vocabulary = read_data(filename)
 print('Data size', len(vocabulary))
 
 # Step 2: Build the dictionary and replace rare words with UNK token.
-vocabulary_size = 50000
+vocabulary_size = 30000
 
 
 def build_dataset(words, n_words):
@@ -237,7 +267,7 @@ with graph.as_default():
   saver = tf.train.Saver()
 
 # Step 5: Begin training.
-num_steps = 10001
+num_steps = 100001
 
 with tf.Session(graph=graph) as session:
   # Open a writer to write summaries.
@@ -336,15 +366,13 @@ def plot_with_labels(low_dim_embs, labels, filename):
 
 try:
   # pylint: disable=g-import-not-at-top
-  from sklearn.manifold import TSNE
-  import matplotlib.pyplot as plt
 
   tsne = TSNE(
       perplexity=30, n_components=2, init='pca', n_iter=5000, method='exact')
-  plot_only = 500
+  plot_only = 250
   low_dim_embs = tsne.fit_transform(final_embeddings[:plot_only, :])
   labels = [reverse_dictionary[i] for i in xrange(plot_only)]
-  plot_with_labels(low_dim_embs, labels, 'tweet_tsne.png')
+  plot_with_labels(low_dim_embs, labels, 'tweets4_tsne.png')
 
 except ImportError as ex:
   print('Please install sklearn, matplotlib, and scipy to show embeddings.')

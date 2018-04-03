@@ -28,9 +28,9 @@ def read_data(filename, outfilename):
     print("Total tweets:", i)
 
 
-filename = "fb_ca_march.zip"
+filename = "../data/fb_ca_march.zip"
 
-outfile = "tweet1"
+outfile = "../data/tweet1"
 
 
 def extract_line(line):
@@ -41,9 +41,7 @@ def extract_line(line):
     s = json.loads(line)["extended_tweet"]["full_text"]
     if not s or not is_ascii(s):
         return None
-    s = re.sub(r'[^\x00-\x7F]+|\n+|http\S+', ' ', s.lower()
-        ).replace("cambridge analytica", "cambridge_analytica"
-        ).replace("mark zuckerberg", "mark_zuckerberg")
+    s = re.sub(r'[^\x00-\x7F]+|\n|http\S+', ' ', s.lower())
     if not s.strip():
         return None
     return cat(w for w in rx.findall(s)
