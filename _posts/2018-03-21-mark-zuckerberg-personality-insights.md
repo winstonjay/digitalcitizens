@@ -23,7 +23,7 @@ Before going on to the results of the personality insights we can also quickly u
 
 <img src="{{ 'assets/imgs/mark-zuckerberg-personality-insights/toshare.png' | absolute_url }}"/>
 
-As well as summarising the object of the text sample, we can see `I want to share` as key the subject/action of the message. This is describing the sematic roles of the document, what about the emotional content?
+As well as summarising the object of the text sample, we can see `I want to share` as key the subject/action. This is describing the sematic roles of the document, what about the emotional content?
 
 <img src="{{ 'assets/imgs/mark-zuckerberg-personality-insights/emotion.png' | absolute_url }}"/>
 
@@ -89,7 +89,7 @@ With this kind of service the accuracy will always be hard to measure. Even thou
 
 __Final thoughts__
 
-Whether this is an accurate description of Mark’s personality or even the text is not the argument. This example was used to start to think about how tools trying to ascertain behavioural insights are integrating with society. The demo page emphasises that a represented sample be used. A person’s social media data tends to be thought of as a representative perhaps for its capacity for eclectic expression. This service and those like it will always be an assessment of a representation of a person not of them themselves. The question posed here is what constitutes a representative sample. The affordances of these services to those seeking insights depend on its accuracy but to those who are the subject of inquiry this is not always the case. For example, in the field of recruitment, services like that provided by [hirevue](https://www.hirevue.com/) use machine learning to gain insights on candidates scoring them via various metrics. Here, for the subject of inquiry accuracy is less important than a favourable outcome (i.e. getting the job). In this way, there is possibility for these tools to shape the behaviour of individuals. What happens when this becomes more widely used in society for decision making processes and is also further democratised? This could make for interesting future inquiry especially with regards to more civic matters.
+Whether this is an accurate description of Mark’s personality or even the text is not the argument. This example was used to start to think about how tools trying to ascertain behavioural insights are integrating with society. The demo page emphasises that a represented sample be used. A person’s social media data tends to be thought of as a representative perhaps for its capacity for eclectic expression. This service and those like it will always be an assessment of a representation of a person not of them themselves. The affordances of these services to those seeking insights depend on its accuracy but to those who are the subject of inquiry this is not always the case. For example, in the field of recruitment, services like that provided by [hirevue](https://www.hirevue.com/) use machine learning to gain insights on candidates scoring them via various metrics. Here, for the subject of inquiry accuracy is less important than a favourable outcome (i.e. getting the job). In this way, there is possibility for these tools to shape the behaviour of individuals. What happens when this becomes more widely used in society for decision making processes and is also further democratised? This could make for interesting future inquiry especially with regards to more civic matters.
 
 
 
