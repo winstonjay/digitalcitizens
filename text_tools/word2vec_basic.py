@@ -45,7 +45,6 @@ from tempfile import gettempdir
 import zipfile
 
 import numpy as np
-from six.moves import urllib
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
@@ -73,7 +72,7 @@ parser.add_argument(
 parser.add_argument(
     'data_file',
     type=str,
-    help='File to load the data from')
+    help='File to load the data from') # twwe
 FLAGS, unparsed = parser.parse_known_args()
 
 # Create the directory for TensorBoard variables if there is not.
@@ -361,12 +360,7 @@ def plot_with_labels(low_dim_embs, labels, filename):
 
   plt.savefig(filename)
 
-# Data size 884513
-# Most common words (+UNK) [['UNK', 53426], ('cambridge_analytica', 23692), ('facebook', 18923), ('#cambridgeanalytica', 12832), ('data', 10838)]
-
 try:
-  # pylint: disable=g-import-not-at-top
-
   tsne = TSNE(
       perplexity=30, n_components=2, init='pca', n_iter=5000, method='exact')
   plot_only = 250
