@@ -1,0 +1,1281 @@
+{
+    "links": [
+        {
+            "group": 0,
+            "source": 0,
+            "target": 1,
+            "weight": 0.8097809886258567
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 2,
+            "weight": 0.4796645503441791
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 3,
+            "weight": 0.44344096140546285
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 4,
+            "weight": 0.3799021916076691
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 5,
+            "weight": 0.33448984095239104
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 6,
+            "weight": 0.2845941476540668
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 7,
+            "weight": 0.2737654338936838
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 8,
+            "weight": 0.26232237713729617
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 9,
+            "weight": 0.24064419411873295
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 10,
+            "weight": 0.20960790289306602
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 11,
+            "weight": 0.1989157915826636
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 12,
+            "weight": 0.1954606675409953
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 13,
+            "weight": 0.17864088530908329
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 14,
+            "weight": 0.17051631725271035
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 15,
+            "weight": 0.17029074035211123
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 16,
+            "weight": 0.16836113186369991
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 17,
+            "weight": 0.13407261924009956
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 18,
+            "weight": 0.12976409706351483
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 19,
+            "weight": 0.12238365450136267
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 20,
+            "weight": 0.1176086017222846
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 21,
+            "weight": 0.11151691990010791
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 22,
+            "weight": 0.10519779595862402
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 23,
+            "weight": 0.1006399574753431
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 24,
+            "weight": 0.09181308981539874
+        },
+        {
+            "group": 0,
+            "source": 0,
+            "target": 25,
+            "weight": 0.08618846400072204
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 10,
+            "weight": 0.6242404910757975
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 27,
+            "weight": 0.454045265685831
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 28,
+            "weight": 0.3170507135710768
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 5,
+            "weight": 0.2795329904110836
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 29,
+            "weight": 0.2795117564859888
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 30,
+            "weight": 0.2650056026047373
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 31,
+            "weight": 0.2589629017380537
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 32,
+            "weight": 0.2380326496673724
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 33,
+            "weight": 0.2353676304824931
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 34,
+            "weight": 0.2146095426142191
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 18,
+            "weight": 0.19845874895653254
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 35,
+            "weight": 0.18442473713545324
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 36,
+            "weight": 0.18357570830029438
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 37,
+            "weight": 0.17374789320782455
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 38,
+            "weight": 0.13192058006467372
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 39,
+            "weight": 0.09466613008056034
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 40,
+            "weight": 0.07845862901794665
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 41,
+            "weight": 0.06354638816943693
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 42,
+            "weight": 0.048028816807081494
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 43,
+            "weight": 0.04261813239338457
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 44,
+            "weight": 0.04190886468169454
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 45,
+            "weight": 0.03780160793523521
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 46,
+            "weight": 0.029198461342737236
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 47,
+            "weight": 0.02637146572785526
+        },
+        {
+            "group": 1,
+            "source": 26,
+            "target": 48,
+            "weight": 0.0
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 10,
+            "weight": 1.0
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 50,
+            "weight": 0.729330256231359
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 51,
+            "weight": 0.7041287140725272
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 52,
+            "weight": 0.549031934191717
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 53,
+            "weight": 0.5270004038233025
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 4,
+            "weight": 0.4807894790617789
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 54,
+            "weight": 0.4731766768911939
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 55,
+            "weight": 0.46601858420384973
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 56,
+            "weight": 0.43570303203978156
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 7,
+            "weight": 0.4181275058641637
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 57,
+            "weight": 0.41319656372562563
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 58,
+            "weight": 0.388701143287907
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 59,
+            "weight": 0.35028033842081396
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 60,
+            "weight": 0.343014792021333
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 61,
+            "weight": 0.3389928389615045
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 27,
+            "weight": 0.33225421599573957
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 62,
+            "weight": 0.32566310095436934
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 11,
+            "weight": 0.32087333489450004
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 63,
+            "weight": 0.31942774791593687
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 64,
+            "weight": 0.3159796525700841
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 65,
+            "weight": 0.3030989601617486
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 66,
+            "weight": 0.2839367739795387
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 67,
+            "weight": 0.278624034217763
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 68,
+            "weight": 0.2678360942488228
+        },
+        {
+            "group": 2,
+            "source": 49,
+            "target": 69,
+            "weight": 0.26253833825820716
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 10,
+            "weight": 0.8613922505351445
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 1,
+            "weight": 0.6227735677869802
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 71,
+            "weight": 0.47094444472576275
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 72,
+            "weight": 0.32723290982836867
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 73,
+            "weight": 0.3240753961725249
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 74,
+            "weight": 0.3223020046012835
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 75,
+            "weight": 0.3131877116063265
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 76,
+            "weight": 0.27374490327035306
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 77,
+            "weight": 0.23096975089425925
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 78,
+            "weight": 0.22755324695820264
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 79,
+            "weight": 0.22374786075949585
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 80,
+            "weight": 0.21069283508908968
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 81,
+            "weight": 0.2020638309814174
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 82,
+            "weight": 0.18911066573346283
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 54,
+            "weight": 0.18904319197845149
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 51,
+            "weight": 0.18064126502234726
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 83,
+            "weight": 0.17615245132405963
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 84,
+            "weight": 0.17276958459369654
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 7,
+            "weight": 0.1701786860608457
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 85,
+            "weight": 0.15979177970956246
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 86,
+            "weight": 0.15907092833749994
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 87,
+            "weight": 0.15744498324275513
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 88,
+            "weight": 0.15411613869241422
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 89,
+            "weight": 0.15312756307067182
+        },
+        {
+            "group": 3,
+            "source": 70,
+            "target": 90,
+            "weight": 0.1514125523627093
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 10,
+            "weight": 0.9035680967930848
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 92,
+            "weight": 0.7609625143679942
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 93,
+            "weight": 0.5201978300890095
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 73,
+            "weight": 0.4376426614101575
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 90,
+            "weight": 0.3427772042655685
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 54,
+            "weight": 0.33856726224199124
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 7,
+            "weight": 0.3316605188115856
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 50,
+            "weight": 0.29965924336651784
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 94,
+            "weight": 0.28836442827981285
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 95,
+            "weight": 0.28572059781304626
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 96,
+            "weight": 0.27018502417807766
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 11,
+            "weight": 0.2681973203648306
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 97,
+            "weight": 0.26810127383682647
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 81,
+            "weight": 0.26545208647116403
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 98,
+            "weight": 0.26139093640102
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 99,
+            "weight": 0.25207673999070834
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 51,
+            "weight": 0.23327260731845567
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 71,
+            "weight": 0.23052680899255162
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 100,
+            "weight": 0.22730058868200048
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 53,
+            "weight": 0.20977751488954885
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 101,
+            "weight": 0.18084099635453657
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 102,
+            "weight": 0.1804387513574146
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 52,
+            "weight": 0.17221776731119942
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 103,
+            "weight": 0.1594057177579501
+        },
+        {
+            "group": 4,
+            "source": 91,
+            "target": 104,
+            "weight": 0.15355857314410631
+        }
+    ],
+    "nodes": [
+        {
+            "name": "A",
+            "root": true,
+            "weight": 0.0
+        },
+        {
+            "name": "citizenship",
+            "root": false,
+            "weight": 0.8879713373824474
+        },
+        {
+            "name": "illeg",
+            "root": false,
+            "weight": 0.7442065079898236
+        },
+        {
+            "name": "immigr",
+            "root": false,
+            "weight": 0.7326398876832487
+        },
+        {
+            "name": "vote",
+            "root": false,
+            "weight": 0.793293448002927
+        },
+        {
+            "name": "trump",
+            "root": false,
+            "weight": 0.7529209189860497
+        },
+        {
+            "name": "legal",
+            "root": false,
+            "weight": 0.6819182216252548
+        },
+        {
+            "name": "american",
+            "root": false,
+            "weight": 0.8176092676471843
+        },
+        {
+            "name": "daca",
+            "root": false,
+            "weight": 0.6748065819266462
+        },
+        {
+            "name": "path",
+            "root": false,
+            "weight": 0.667884481735625
+        },
+        {
+            "name": "citizen",
+            "root": false,
+            "weight": 1.0
+        },
+        {
+            "name": "want",
+            "root": false,
+            "weight": 0.7768118866947804
+        },
+        {
+            "name": "ask",
+            "root": false,
+            "weight": 0.6534568473860606
+        },
+        {
+            "name": "democrat",
+            "root": false,
+            "weight": 0.6480860920187518
+        },
+        {
+            "name": "million",
+            "root": false,
+            "weight": 0.6454918213620816
+        },
+        {
+            "name": "deport",
+            "root": false,
+            "weight": 0.6454197919901832
+        },
+        {
+            "name": "dreamer",
+            "root": false,
+            "weight": 0.6448036451814404
+        },
+        {
+            "name": "obama",
+            "root": false,
+            "weight": 0.6338549176253343
+        },
+        {
+            "name": "presid",
+            "root": false,
+            "weight": 0.7075269421636929
+        },
+        {
+            "name": "tax",
+            "root": false,
+            "weight": 0.6301224929575675
+        },
+        {
+            "name": "question",
+            "root": false,
+            "weight": 0.6285977621382969
+        },
+        {
+            "name": "appli",
+            "root": false,
+            "weight": 0.6266526160958992
+        },
+        {
+            "name": "russian",
+            "root": false,
+            "weight": 0.6246348450952127
+        },
+        {
+            "name": "card",
+            "root": false,
+            "weight": 0.6231794733692361
+        },
+        {
+            "name": "resid",
+            "root": false,
+            "weight": 0.6203609501441716
+        },
+        {
+            "name": "provid",
+            "root": false,
+            "weight": 0.6185649406080931
+        },
+        {
+            "name": "B",
+            "root": true,
+            "weight": 0.0
+        },
+        {
+            "name": "state",
+            "root": false,
+            "weight": 0.7820565431873914
+        },
+        {
+            "name": "pleas",
+            "root": false,
+            "weight": 0.6922819869344433
+        },
+        {
+            "name": "today",
+            "root": false,
+            "weight": 0.680295354023977
+        },
+        {
+            "name": "new",
+            "root": false,
+            "weight": 0.6756633675486157
+        },
+        {
+            "name": "privat",
+            "root": false,
+            "weight": 0.6737338617045263
+        },
+        {
+            "name": "offic",
+            "root": false,
+            "weight": 0.6670505847097469
+        },
+        {
+            "name": "general",
+            "root": false,
+            "weight": 0.666199612569096
+        },
+        {
+            "name": "report",
+            "root": false,
+            "weight": 0.6595713096400557
+        },
+        {
+            "name": "attorney",
+            "root": false,
+            "weight": 0.6499329443032753
+        },
+        {
+            "name": "lawsuit",
+            "root": false,
+            "weight": 0.6496618393561032
+        },
+        {
+            "name": "major",
+            "root": false,
+            "weight": 0.6465237017792291
+        },
+        {
+            "name": "unit",
+            "root": false,
+            "weight": 0.6331677460678959
+        },
+        {
+            "name": "target",
+            "root": false,
+            "weight": 0.6212719596391811
+        },
+        {
+            "name": "repres",
+            "root": false,
+            "weight": 0.6160967128896992
+        },
+        {
+            "name": "polic",
+            "root": false,
+            "weight": 0.6113350580435514
+        },
+        {
+            "name": "pull",
+            "root": false,
+            "weight": 0.6063801140060568
+        },
+        {
+            "name": "join",
+            "root": false,
+            "weight": 0.6046524184892539
+        },
+        {
+            "name": "district",
+            "root": false,
+            "weight": 0.6044259409215366
+        },
+        {
+            "name": "press",
+            "root": false,
+            "weight": 0.6031144452724365
+        },
+        {
+            "name": "associ",
+            "root": false,
+            "weight": 0.6003673588297989
+        },
+        {
+            "name": "order",
+            "root": false,
+            "weight": 0.599464665699612
+        },
+        {
+            "name": "polici",
+            "root": false,
+            "weight": 0.5910439448395668
+        },
+        {
+            "name": "C",
+            "root": true,
+            "weight": 0.0
+        },
+        {
+            "name": "gun",
+            "root": false,
+            "weight": 0.842367427907458
+        },
+        {
+            "name": "right",
+            "root": false,
+            "weight": 0.8436320394462936
+        },
+        {
+            "name": "everi",
+            "root": false,
+            "weight": 0.7881178520800938
+        },
+        {
+            "name": "need",
+            "root": false,
+            "weight": 0.7854537130795702
+        },
+        {
+            "name": "peopl",
+            "root": false,
+            "weight": 0.8053841665884455
+        },
+        {
+            "name": "weapon",
+            "root": false,
+            "weight": 0.7398491896322031
+        },
+        {
+            "name": "protect",
+            "root": false,
+            "weight": 0.7301690753326737
+        },
+        {
+            "name": "arm",
+            "root": false,
+            "weight": 0.7229824938519646
+        },
+        {
+            "name": "govern",
+            "root": false,
+            "weight": 0.7151608164380466
+        },
+        {
+            "name": "nra",
+            "root": false,
+            "weight": 0.7028925991025831
+        },
+        {
+            "name": "elect",
+            "root": false,
+            "weight": 0.7005726242192335
+        },
+        {
+            "name": "use",
+            "root": false,
+            "weight": 0.699288367046025
+        },
+        {
+            "name": "constitut",
+            "root": false,
+            "weight": 0.6950320240708577
+        },
+        {
+            "name": "kill",
+            "root": false,
+            "weight": 0.69304100211014
+        },
+        {
+            "name": "amend",
+            "root": false,
+            "weight": 0.6919399844911012
+        },
+        {
+            "name": "respons",
+            "root": false,
+            "weight": 0.6878270270857746
+        },
+        {
+            "name": "democraci",
+            "root": false,
+            "weight": 0.6817083144372711
+        },
+        {
+            "name": "militari",
+            "root": false,
+            "weight": 0.6800118938060612
+        },
+        {
+            "name": "pay",
+            "root": false,
+            "weight": 0.6765671770022691
+        },
+        {
+            "name": "assault",
+            "root": false,
+            "weight": 0.6748755408663798
+        },
+        {
+            "name": "D",
+            "root": true,
+            "weight": 0.0
+        },
+        {
+            "name": "countri",
+            "root": false,
+            "weight": 0.7742877722605799
+        },
+        {
+            "name": "eu",
+            "root": false,
+            "weight": 0.6955332826079442
+        },
+        {
+            "name": "like",
+            "root": false,
+            "weight": 0.7778661103579779
+        },
+        {
+            "name": "work",
+            "root": false,
+            "weight": 0.6939587862590073
+        },
+        {
+            "name": "live",
+            "root": false,
+            "weight": 0.6910484847255536
+        },
+        {
+            "name": "nation",
+            "root": false,
+            "weight": 0.6784539295968762
+        },
+        {
+            "name": "year",
+            "root": false,
+            "weight": 0.6647953176098859
+        },
+        {
+            "name": "world",
+            "root": false,
+            "weight": 0.663704387501576
+        },
+        {
+            "name": "uk",
+            "root": false,
+            "weight": 0.6624892826881136
+        },
+        {
+            "name": "home",
+            "root": false,
+            "weight": 0.6583206586106471
+        },
+        {
+            "name": "make",
+            "root": false,
+            "weight": 0.7296687116203519
+        },
+        {
+            "name": "wrong",
+            "root": false,
+            "weight": 0.6514292167176017
+        },
+        {
+            "name": "british",
+            "root": false,
+            "weight": 0.6472915056206054
+        },
+        {
+            "name": "dual",
+            "root": false,
+            "weight": 0.646211316269847
+        },
+        {
+            "name": "help",
+            "root": false,
+            "weight": 0.642067349702604
+        },
+        {
+            "name": "born",
+            "root": false,
+            "weight": 0.6418371733351484
+        },
+        {
+            "name": "great",
+            "root": false,
+            "weight": 0.6413179898389446
+        },
+        {
+            "name": "class",
+            "root": false,
+            "weight": 0.6402550504091011
+        },
+        {
+            "name": "india",
+            "root": false,
+            "weight": 0.6399393865227763
+        },
+        {
+            "name": "know",
+            "root": false,
+            "weight": 0.7383774901647662
+        },
+        {
+            "name": "E",
+            "root": true,
+            "weight": 0.0
+        },
+        {
+            "name": "law",
+            "root": false,
+            "weight": 0.8340282743636811
+        },
+        {
+            "name": "abid",
+            "root": false,
+            "weight": 0.75714926353461
+        },
+        {
+            "name": "say",
+            "root": false,
+            "weight": 0.6831221168141335
+        },
+        {
+            "name": "think",
+            "root": false,
+            "weight": 0.682277910481741
+        },
+        {
+            "name": "good",
+            "root": false,
+            "weight": 0.6773172181057171
+        },
+        {
+            "name": "crimin",
+            "root": false,
+            "weight": 0.6766518519805734
+        },
+        {
+            "name": "senior",
+            "root": false,
+            "weight": 0.6745091618848935
+        },
+        {
+            "name": "stop",
+            "root": false,
+            "weight": 0.6715350288269791
+        },
+        {
+            "name": "tri",
+            "root": false,
+            "weight": 0.6636237107261994
+        },
+        {
+            "name": "yes",
+            "root": false,
+            "weight": 0.648788613492759
+        },
+        {
+            "name": "becom",
+            "root": false,
+            "weight": 0.6486601719084698
+        },
+        {
+            "name": "come",
+            "root": false,
+            "weight": 0.6419440755561171
+        },
+        {
+            "name": "time",
+            "root": false,
+            "weight": 0.6400770131360906
+        }
+    ]
+}
