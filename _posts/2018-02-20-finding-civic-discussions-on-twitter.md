@@ -6,6 +6,10 @@ date:   2018-02-20 15:03:00 +0000
 
 As explored in the previous article, academic literature has conceived of citizenship in many ways, differentiating its dimensions and discourse. This article will seek examples of these conceptions in practice, exploring their possible manifestation within the online social platform Twitter. Computational methods will be used to explore a small dataset of around 150,000 tweets collected over two separate time periods. Trying to uncover types of discussions that occur within the site will serve as the starting point for further investigations.
 
+{% assign static_path = "assets/imgs/finding-civic-discussions-on-twitter" | absolute_url %}
+
+<!-- <img src="{{ static_path }}/discuss.jpg"> -->
+
 ## Introduction
 
 This current articles investigation is focused on the thematic content of civic communication. It is starting from the position that individuals do use Twitter to engage in civic and political communication.
@@ -14,8 +18,6 @@ This current articles investigation is focused on the thematic content of civic 
 Twitter poses a sensible point of departure for an exploration of citizenship online for several reasons. With many active users generating large amounts of semi-structured data, the site has become a common target for social research. The platforms configuration facilitates not only the short expression of public sentiment but also provides structures helpful for its aggregation and categorization in the form of hashtags, geolocations, mentions, etc. Also, aided by well documented API’s and a variety of existing tools, it has become an easily available resource for all kinds of researchers.
 
 Whether Twitter is the best place to look for examples of citizenship in online public discourse is not the question posed here. Rather, how can civic communication be traced and linked to theory and what methodologies could be appropriate for uncovering it?
-
-<img src="{{ 'assets/imgs/finding-civic-discussions-on-twitter/t1.png' | absolute_url }}"/>
 
 ## Methodology
 
@@ -38,18 +40,18 @@ Per dataset, a dominant topic can be found relating to events in American politi
 #### S1, S2 Count frequencies per feature:
 Using a purely count based method we can see these themes in the form of user generated hashtags, and most-common words in both dataset (S1=<span style="color:#ff9701"> █ amber</span>, S2=<span style="color:#3f51b5;"> █ blue</span>). In the case of hashtags, we can probably make some clear inferences via the intentions of users to include them. However, the word frequency significance is more convoluted and does not provide additional context to the vocabulary usage. Even though stop words have been removed we just literally just seeing the most common but not necessarily the most important words across the dataset.
 
-<img src="{{ 'assets/imgs/finding-civic-discussions-on-twitter/tops1.png' | absolute_url }}"/>
+<img src="{{ static_path }}/tops1.png"/>
 
-<img src="{{ 'assets/imgs/finding-civic-discussions-on-twitter/tops2.png' | absolute_url }}"/>
+<img src="{{ static_path }}/tops2.png"/>
 
 #### S1, S2 TF-IDF scores:
 Using TF-IDF weighting on n-grams we can expand on the information that being communicated. The charts below are showing the top TF-IDF scores for each tweet summed across the dataset.
 
-<img src="{{ 'assets/imgs/finding-civic-discussions-on-twitter/ngrams1.png' | absolute_url }}"/>
+<img src="{{ static_path }}/ngrams1.png"/>
 
 S1 exhibits the trigram `'end chain migration'` as the most significant word sequence, this is perhaps the most clearly stated sentiment of this dataset. Other trigrams such as `'give path citizenship'`, `'offer path citizenship'` and `'support path citizenship'` could provide evidence of counter positions however these could more naturally be prefixed with negations. As a recent [New York Times article](https://www.nytimes.com/2018/03/20/magazine/chain-migration-used-to-be-a-benign-term-not-anymore.html) has argued, ‘chain migration’ is a loaded term that evidences a certain position on immigration.
 
-<img src="{{ 'assets/imgs/finding-civic-discussions-on-twitter/ngrams2.png' | absolute_url }}"/>
+<img src="{{ static_path }}/ngrams2.png"/>
 
 S2 shows the trigram `law abiding citizen` massively out scoring all other terms. This could be attributed to the construction of the dataset, but following debates online it does seem like a recurrent form of argument. The mention of the law abiding citizen was also present in S1, just not as pronounced.
 
