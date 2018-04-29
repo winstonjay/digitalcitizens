@@ -56,6 +56,8 @@ import matplotlib.pyplot as plt
 
 from nltk.corpus import stopwords
 
+stemmer = SnowballStemmer("english")
+
 
 plt.style.use('fivethirtyeight')
 
@@ -91,7 +93,7 @@ def read_data(filename):
   with zipfile.ZipFile(filename) as f:
     with f.open(f.namelist()[0]) as d:
       for i, line in enumerate(d):
-        _, text, _ = tf.compat.as_str(line).split("\t")
+        text = tf.compat.as_str(line).split("\t")[1] # update as needed
         for s in text.split():
           if s in spanish_words:
             break # we see some spanish and we are gone

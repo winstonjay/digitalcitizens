@@ -102,9 +102,7 @@ stop_words = set(open(stop_words_path).read().split())
 def extract_hashtags(entities):
     "gets tags tweet by tweet returning their names seperated by spaces."
     tags = [t['text'] for t in entities["hashtags"]]
-    n = len(tags)
-    tags = cat(tags)
-    return (tags, n) if is_ascii(tags) else (None, -1)
+    return (cat(tags), len(tags)) if is_ascii(tags) else (None, -1)
 
 def is_ascii(s):
     return all(ord(c) < 128 for c in s)

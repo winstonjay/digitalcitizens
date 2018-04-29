@@ -4,6 +4,7 @@ data/*
 env/
 .env
 log/
+log0/
 notes.md
 
 __pycache__
@@ -12,6 +13,4 @@ __pycache__
 
 text_generator1.ipynb
 ca_fb_reactions.ipynb
-ca_fb_notes.ipynb
-
-the_guardian
+tweetset_last.ipynb
