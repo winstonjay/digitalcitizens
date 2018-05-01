@@ -3,7 +3,7 @@ layout: post
 title:  "Data, politics and democracy part 2: Twitter reactions to Facebooks ‘data leak’"
 date:   2018-04-12 23:22:45 +0100
 ---
-Using data collected whilst the Facebook/Cambridge Analytica story was first gaining momentum, this post looks at the responses made to it via Twitter. Experimenting word embedding’s and other computational methods, it aims to map key dimensions that highlight the contextual relationships between different sentiments across the dataset.
+Using data collected whilst the Facebook/Cambridge Analytica story was first gaining momentum, this post looks at the responses made to it via Twitter. Experimenting word embeddings and other computational methods, it aims to map key dimensions that highlight the contextual relationships between different sentiments across the dataset.
 
 {% assign static_path = "assets/imgs/data-politics-and-democracy-part-2" | absolute_url %}
 
@@ -11,7 +11,7 @@ Using data collected whilst the Facebook/Cambridge Analytica story was first gai
 
 ## Introduction
 
-This section of the series can be outlined as follows: First a brief rational is given on why Twitter is being used as a site of research rather than Facebook, second analytical methods will be introduced, thirdly findings will be discussed and finally a brief conclusion will be made.
+This section of the series can be outlined as follows: First a brief rationale is given on why Twitter is being used as a site of research rather than Facebook, second analytical methods will be introduced, thirdly findings will be discussed and finally a brief conclusion will be made.
 
 ### Twitter over Facebook
 
@@ -33,20 +33,20 @@ For this and the reasons discussed above, though not perfect, Twitter seems it�
 
 ## Approach
 Approximately 500,000 tweets were collected using Twitters [streaming API ](https://developer.twitter.com/en/docs/tweets/filter-realtime/overview) between the 20th and the 23rd of March 2018, filtering for the query terms `Facebook` and `Cambridge Anaylitica`. This was just after the Guardian’s [initial story](https://www.theguardian.com/news/2018/mar/17/data-war-whistleblower-christopher-wylie-faceook-nix-bannon-trump?CMP=twt_gu) was released and was gaining traction across social and broadcast media.
-Along with counting hashtag frequencies, and word co-occurrences, visualisations generated from word embedding’s will be used to form a distant reading of the semantic relationships within the dataset. This experimentation provides a contextual overview of the response to help identify specific attributes for moving forward.
+Along with counting hashtag frequencies, and word co-occurrences, visualisations generated from word embeddings will be used to form a distant reading of the semantic relationships within the dataset. This experimentation provides a contextual overview of the response to help identify specific attributes for moving forward.
 
-### Word embedding’s
-Vector representations of words, or [vector space models]( https://en.wikipedia.org/wiki/Vector_space_model), aim to map the semantic similarity of words in continuous vector space. This has advantages over the more traditional bag-of-words model as it provides denser representations of terms. Instead of treating individual terms as unique identifiers, we can embed contextual information within them. For example, the similarities cats and kittens do and don’t have. These come in two essential styles, count based and neural embedding’s. Within this investigation they will be used to compare related terms within the dataset.
+### Word embeddings
+Vector representations of words, or [vector space models]( https://en.wikipedia.org/wiki/Vector_space_model), aim to map the semantic similarity of words in continuous vector space. This has advantages over the more traditional bag-of-words model as it provides denser representations of terms. Instead of treating individual terms as unique identifiers, we can embed contextual information within them. For example, the similarities cats and kittens do and don’t have. These come in two essential styles, count based and neural embeddings. Within this investigation they will be used to compare related terms within the dataset.
 
 <img src="{{ static_path }}/dataspace.jpg"/>
 
-The intuitions behind word embedding’s depend on the [distributional hypothesis]( https://en.wikipedia.org/wiki/Distributional_semantics#Distributional_Hypothesis), which implies that semantically similar words occur in similar contexts. As J.R. Firth summarises *’you shall know word by the company it keeps’* (1957; cited in Jurafsky, D. and James, M. 2009. p692).
+The intuitions behind word embeddings depend on the [distributional hypothesis]( https://en.wikipedia.org/wiki/Distributional_semantics#Distributional_Hypothesis), which implies that semantically similar words occur in similar contexts. As J.R. Firth summarises *’you shall know word by the company it keeps’* (1957; cited in Jurafsky, D. and James, M. 2009. p692).
 
 Though definition of what constitutes a context can vary, in this article it will be employed in two distinct ways. One will assume context is created by a window of neighbouring words, for instance 2 either side. This will be used to build a neural model. The other will assume all words within a Tweet have a shared context and shall be used to measure co-occurrence in a count based manor.
 
 **Count based methods**
 
-For my own notes, an illustrative example is given. This example is slight variation on that provided in Grefenstette, E. 2017. The technique used in vector representations shown here also forms the basis for neural embedding’s described later.
+For my own notes, an illustrative example is given. This example is slight variation on that provided in Grefenstette, E. 2017. The technique used in vector representations shown here also forms the basis for neural embeddings described later.
 
 
 $$
@@ -68,7 +68,7 @@ $$
 \end{align}
 $$
 
-After this small example our complete set of context vocabulary would be: `{cute, purred, softly, small, meowed, furry, old}`. Using this generated vocabulary, one way we can create a vector representation for each of our target words is as follows:
+After this small example our complete set of context vocabulary would be: `{cute, purred, small, furry, meowed, old, loud,  barked}`. Using this generated vocabulary, one way we can create a vector representation for each of our target words is as follows:
 
 $$
 \begin{align}
@@ -96,9 +96,9 @@ $$
 
 Computing this, as is expected from this completely constructed example, `kitten` is most like `cat`. WOW! how did that happen? Also, because the fact that both `cat` and `dog` have `old` in their context, `dog` is more like `cat` than `kitten`.
 
-**Neural Embedding’s**
+**Neural embeddings**
 
-Beyond count based methods neural embedding’s have also been widely employed to predict vector representations. Using this method embedding’s are normally represented by a matrix of target and context words. Two of the main modelling strategies here, are the Continuous Bag-of-words model (CBOW) and the Skip-gram model. They function in pretty much opposite ways. Here is an illustration comparing both:
+Beyond count based methods neural embeddings have also been widely employed to predict vector representations. Using this method embeddings are normally represented by a matrix of target and context words. Two of the main modelling strategies here, are the Continuous Bag-of-words model (CBOW) and the Skip-gram model. They function in pretty much opposite ways. Here is an illustration comparing both:
 
 <img src="{{ static_path }}/skipgram.jpg"/>
 <small>Image from: (Mikolov, T. Chen, K. et al. 2013) [https://arxiv.org/abs/1301.3781]( https://arxiv.org/abs/1301.3781)</small>
@@ -107,7 +107,7 @@ The CBOW model tries to predict the target word from a given set of context word
 
 **Visualising vector representations**
 
-Word vector representations produce high dimensional representations. To make sense of the representations better we can project them in to lower dimensional space. This will be done here using t-distributed stochastic neighbour embedding (t-SNE) implemented using the Python package Scikit-Learn.
+Word vector representations produce high dimensional representations. To make sense of the representations better we can project them in to lower dimensional space. This will be done here using t-distributed stochastic neighbour embedding (t-SNE) implemented using the Python package [Scikit-Learn](http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html).
 
 **Counting Co-occurrences**
 
@@ -128,9 +128,9 @@ Looking at hashtag frequencies, we can see that `deleteFacebook` was the most po
 <img src="{{ static_path }}/tags.png"/>
 
 
-### Word embedding’s
+### Word embeddings
 
-Running the Tensorflow model described previously for 10,000 iterations it finished with an average loss of around 4% in predicting contexts of given terms within the training data. Evaluation of how well the model performs in practice is obviously harder to determine. The size and quality of the data put into the model is obviously not going to give a good representation of the English language. It may however have the potential to map corpora specific terms and Ideas. Below is the t-SNE visualisation of the word embedding’s created. Hopefully what we should expect to see is that terms that are similar end up clustering nearby each other. What is projected is also the `most common 250 terms` within the dataset after the removal of stopwords.
+Running the Tensorflow model described previously for 10,000 iterations it finished with an average loss of around 4% in predicting contexts of given terms within the training data. Evaluation of how well the model performs in practice is obviously harder to determine. The size and quality of the data put into the model is obviously not going to give a good representation of the English language. It may however have the potential to map corpora specific terms and Ideas. Below is the t-SNE visualisation of the word embeddings created. Hopefully what we should expect to see is that terms that are similar end up clustering nearby each other. What is projected is also the `most common 250 terms` within the dataset after the removal of stopwords.
 
 
 <img class="big-img" src="{{ static_path }}/tweets4_tsne.png">
@@ -153,7 +153,7 @@ The co-occurrences presented here are as expected. Utterances of `trust` are mos
 
 
 ## Summary
-Beyond being a DIY exercise, investigating a topic through Twitter that has already been covered extensively within the news doesn’t seem to yield much new information worth noting. We can see people are talking about a breach of trust, #deleteFacebook, and the data scandal in relation to politics – as was reported. Evaluating the methods used has also provided challenges. Particularly with the neural embedding’s as in reduced dimensional space the data in visualisations is subject to compression. Overall this as provided a way to think about the initial reactions to the topic visually. Its results will be used for further discussion in a later post.
+Beyond being a DIY exercise, investigating a topic through Twitter that has already been covered extensively within the news doesn’t seem to yield much new information worth noting. We can see people are talking about a breach of trust, #deleteFacebook, and the data scandal in relation to politics – as was reported. Evaluating the methods used has also provided challenges. Particularly with the neural embeddings as in reduced dimensional space the data in visualisations is subject to compression. Overall this as provided a way to think about the initial reactions to the topic visually. Its results will be used for further discussion in a later post.
 
 ---
 
