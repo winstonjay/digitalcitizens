@@ -37,8 +37,12 @@ table {font-size: 0.7em }
  p, blockquote, pre,
  ul, ol, dl, figure,
  .highlight, img, hr,
- .graph-box, iframe {
-   margin-bottom: 24px; }
+ .graph-box, iframe, .MathJax_Display {
+   margin-bottom: 24px !important; }
+
+.MathJax_Display {
+    text-align: left !important;
+}
 
 .iframe {
     max-width: 100%;
