@@ -19,21 +19,21 @@ It is probably fitting to answer why Twitter is being used to explore an issue m
 
 **Collection cost**
 
-It is cheaper to collect the kind of public response data in mind on Twitter rather than Facebook due to the design of their data collection services. For aggregating posts real-time, Twitter’s has its [Streaming API](https://developer.twitter.com/en/docs/tweets/filter-realtime/overview) which is open for anyone to use. The closest thing Facebook has to this is its [Public Feed API]( https://developers.facebook.com/docs/public_feed/). Access to this is restricted to a limited set of pre-approved ‘media publishers’. To access Facebook user data at scale, you must either pay, have special institutional privileges, be providing a widely-used service or pretty much trick users into sharing it with you.
+It is cheaper to collect the kind of public response data in mind on Twitter rather than Facebook due to the design of their data collection services. For aggregating posts real-time, Twitter has its [Streaming API](https://developer.twitter.com/en/docs/tweets/filter-realtime/overview) which is open for anyone to use. The closest thing Facebook has to this is its [Public Feed API]( https://developers.facebook.com/docs/public_feed/). Access to this is restricted to a limited set of pre-approved ‘media publishers’. To access Facebook user data at scale, you must either pay, have special institutional privileges, be providing a widely-used service or pretty much trick users into sharing it with you.
 
 **What’s being shared**
 
-Regarding the character of the content created within each site, there are specific design aspects to each that could have a formative effect on what is shared. This presents differences in the usefulness of each for this investigation. On Facebook, a user principally addresses their ‘friends’, on Twitter it’s their ‘followers’, this is reflected in the default post visibility settings. Facebook asks ‘what’s on your mind?’, Twitter asks ‘what’s happening?’. Ultimately, the difference in what each site purveys as it purpose is; Facebook is about connecting people, and Twitter is about connecting people to current affairs.
+Regarding the character of the content created within each site, there are specific design aspects to each that could have a formative effect on what is shared. This presents differences in the usefulness of each for this investigation. On Facebook, a user principally addresses their ‘friends’. On Twitter, it’s their ‘followers’. This is reflected in among other things the default post visibility settings. Facebook asks, ‘what’s on your mind?’. Twitter asks, ‘what’s happening?’. Ultimately, the difference in what each site purveys as its uses are, Facebook is about connecting people and Twitter is about connecting people to current affairs.
 
 **Short-comings**
 
 Though it may provide means for investigating sentiment on an international scale, public posts made on Twitter are undoubtedly not a reflective sample of all public opinion, even of the opinions of all Twitter users. Though it provides large amounts of data, its quality is often hard to determine. As we will see in this section, it can be especially messy at times. These themes and other critical engagements are discussed in more detail in a previous post ([Notes on Digital Methods](#TODO)).
 
-For this and the reasons discussed above, though not perfect, Twitter seems it’s a more appropriate tool to learn about public interaction with current affairs.
+For this and the reasons discussed above, though not perfect, Twitter seems like a more appropriate tool to learn about public interaction with current affairs.
 
 ## Approach
 Approximately 500,000 tweets were collected using Twitters [streaming API ](https://developer.twitter.com/en/docs/tweets/filter-realtime/overview) between the 20th and the 23rd of March 2018, filtering for the query terms `Facebook` and `Cambridge Anaylitica`. This was just after the Guardian’s [initial story](https://www.theguardian.com/news/2018/mar/17/data-war-whistleblower-christopher-wylie-faceook-nix-bannon-trump?CMP=twt_gu) was released and was gaining traction across social and broadcast media.
-Along with counting hashtag frequencies, and word co-occurrences, visualisations generated from word embeddings will be used to form a distant reading of the semantic relationships within the dataset. This experimentation provides a contextual overview of the response to help identify specific attributes for moving forward.
+Along with counting hashtag frequencies and word co-occurrences, visualisations generated from word embeddings will be used to form a distant reading of the semantic relationships within the dataset. This experimentation provides a contextual overview of the response to help identify specific attributes for moving forward.
 
 ### Word embeddings
 Vector representations of words, or [vector space models]( https://en.wikipedia.org/wiki/Vector_space_model), aim to map the semantic similarity of words in continuous vector space. This has advantages over the more traditional bag-of-words model as it provides denser representations of terms. Instead of treating individual terms as unique identifiers, we can embed contextual information within them. For example, the similarities cats and kittens do and don’t have. These come in two essential styles, count based and neural embeddings. Within this investigation they will be used to compare related terms within the dataset.
@@ -42,7 +42,7 @@ Vector representations of words, or [vector space models]( https://en.wikipedia.
 
 The intuitions behind word embeddings depend on the [distributional hypothesis]( https://en.wikipedia.org/wiki/Distributional_semantics#Distributional_Hypothesis), which implies that semantically similar words occur in similar contexts. As J.R. Firth summarises *’you shall know word by the company it keeps’* (1957; cited in Jurafsky, D. and James, M. 2009. p692).
 
-Though definition of what constitutes a context can vary, in this article it will be employed in two distinct ways. One will assume context is created by a window of neighbouring words, for instance 2 either side. This will be used to build a neural model. The other will assume all words within a Tweet have a shared context and shall be used to measure co-occurrence in a count based manor.
+Though definition of what constitutes a context can vary, in this article it will be employed in two distinct ways. One will assume context is created by a window of neighbouring words, for instance 2 either side. This will be used to build a neural model. The other will assume all words within a Tweet have a shared context and shall be used to measure co-occurrence in a count based manner.
 
 **Count based methods**
 
@@ -107,43 +107,43 @@ The CBOW model tries to predict the target word from a given set of context word
 
 **Visualising vector representations**
 
-Word vector representations produce high dimensional representations. To make sense of the representations better we can project them in to lower dimensional space. This will be done here using t-distributed stochastic neighbour embedding (t-SNE) implemented using the Python package [Scikit-Learn](http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html).
+Word vectors produce high dimensional data. To make sense of the representations visually we can project them into lower dimensional space. This will be done here using t-distributed stochastic neighbour embedding (t-SNE) implemented using the Python package [Scikit-Learn](http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html).
 
 **Counting Co-occurrences**
 
 The Idea of a word co-occurrence matrix is something widely used in natural language processing. As a simple extra piece of analysis, the top co-occurrences of some terms of interest from within the dataset will be presented. The terms of interest can be described as: `data`, `privacy`, `people`, `delete`, `trust`, `users`. This is presented in a collection of bar charts.
 
 ### Noise within the data
-As discussed in a previous post the dataset collected here was especially noisy. As a reminder, this came in the form of spam targeting the trending topic but also the fact that tweets from a wide variety of languages. The topic followed was a internationally discussed issue, however, it didn’t help that the query terms were organisation names instead of words belonging to the English language.
+As discussed in a previous post [Twitter Spam and Ham]({{ site.baseurl }}{% post_url 2018-04-01-twitter-spam-and-ham %}), the dataset collected here was especially noisy. As a reminder; this came in the form of spam targeting the trending topic but also the fact that tweets came from a wide variety of languages. The topic followed was an internationally discussed issue, however, it didn’t help that the query terms were organisation names instead of words belonging to the English language.
 
 ### Approach summary
-The methods for investigating the data here are experimental in a way that is trying to learn about methodological approaches and the data simultaneously. The main strategy being employed here is given a term found in the data how is that connected to other terms. For example, when the word ‘privacy’ is used what other utterances are likely to be made. This hopes to provide a way to understand the discussions within the sample better.
+The methods for investigating the data here are experimental in a way that is trying to learn about methodological approaches and the data simultaneously. The main strategy being employed here is, using distributional semantics to link common terms. In doing this see what more can be understood the discussions within the sample.
 
 ## Findings
 
 ### Hashtags
 
-Looking at hashtag frequencies, we can see that `deleteFacebook` was the most popular – something that was also widely reported by news organisations. Whilst filtering spam it was noted many tweets contained nothing but this repeatedly. Some of these Tweets looked like they come from automated accounts some, others more natural. This did pose some questions of trend manipulation, but after counting the document frequencies and not repeats within tweets there was not much change in the results. Below the top ten tags can be seen with the query terms (‘Facebook’, ‘CambridgeAnalytica’) filtered from the collection. Taking this approach there doesn’t seem to be anything too overt to help that helps explore the topic in from any new directions.
+Looking at hashtag frequencies, we can see that `deleteFacebook` was the most popular – something that was also widely reported by news organisations. Whilst filtering spam it was noted many tweets contained nothing but this repeatedly. Some of these Tweets looked like they come from automated accounts, others more natural. This did pose some questions of trend manipulation, but after counting the document frequencies and not repeats within tweets the trend did not change. Below the top ten tags can be seen with the query terms (‘Facebook’, ‘CambridgeAnalytica’) filtered from the collection. Taking this approach there doesn’t seem to be anything too overt to help explore the topic in any new directions.
 
 <img src="{{ static_path }}/tags.png"/>
 
 
 ### Word embeddings
 
-Running the Tensorflow model described previously for 10,000 iterations it finished with an average loss of around 4% in predicting contexts of given terms within the training data. Evaluation of how well the model performs in practice is obviously harder to determine. The size and quality of the data put into the model is obviously not going to give a good representation of the English language. It may however have the potential to map corpora specific terms and Ideas. Below is the t-SNE visualisation of the word embeddings created. Hopefully what we should expect to see is that terms that are similar end up clustering nearby each other. What is projected is also the `most common 250 terms` within the dataset after the removal of stopwords.
+Running the Tensorflow model described previously for 10,000 iterations it finished with an average loss of around 4% in predicting contexts of given terms within the training data. Evaluation of how well the model performs in practice is obviously harder to determine. The size and quality of the data put into the model is obviously not going to give a good representation of the English language. It may however have the potential to map corpora specific terms and ideas. Below is the t-SNE visualisation of the word embeddings created. Hopefully what we should expect to see is that terms that are similar end up clustering nearby each other. What is projected is also the `most common 250 terms` within the dataset after the removal of stopwords.
 
 
 <img class="big-img" src="{{ static_path }}/tweets4_tsne.png">
 
-It is argued that T-SNE visualisations tend themselves to be easily miss-read, hopefully that won’t be the case here lol. Running the visualisation program several times, the intuitive understanding is, that while global positioning within the graph tends to vary somewhat, locally relevant terms produce more repeatable results. For example, the small group of un-filtered French stop words `vous, mias, pour, dans` always clustered. Logically French words are not likely to appear in the same context as English ones, so that seems correct. Common bigrams such as `fake news`, `social platforms`, `public security` seem to have clustered also. As well as variations in tense, pluralisation etc.
+It is argued that t-SNE visualisations tend themselves to be easily misread (Wattenberg, et al., 2016), hopefully that won’t be the case here lol. Running the visualisation program several times, the intuitive understanding is, that while global positioning within the graph tends to vary somewhat, locally relevant terms produce more repeatable results. For example, the small group of un-filtered French stop words `vous, mais, pour, dans` always clustered. Logically French words are not likely to appear in the same context as English ones, so that seems correct. Common bigrams such as `fake news`, `social platforms`, `public security` seem to have clustered also. As well as variations in tense, pluralisation etc.
 
 **Annotating the Space**
 
-Zooming in on the bottom left of the graph seems to locate the main areas of interest in this inquiry. Qualitative annotations have been made bring further structure to the space. In hind-sight some of the highlighting’s seem a bit sloppy, but this is mainly employed as a method of communication, not classification. Being an issue centred on the use of data, dimensions presented here can be said to emerge. These can be described as: the business or the economics of data, its politics or how data is used and regulated, and the individual securities of privacies of users. These obviously overlap and are in an active state of interplay.
+Zooming in on the bottom left of the graph seems to locate the main areas of interest in this inquiry. Qualitative annotations have been made to bring further structure to the space. This is employed as a method of communication, not classification. Being an issue centred on the use of data, dimensions presented here can be said to emerge. These can be described as: the business or the economics of data, its politics or how data is used and regulated, and the individual securities of privacies of users. These obviously overlap and are in an active state of interplay.
 
 <img src="{{ static_path }}/annotated.jpg"/>
 
-The annotation of `sociality` was included as it points to language use that is clustered due to the copra being from social media. The use of words `like`, `share`, `follow`, `post`, though they have become more used generally in language, would not be as present within a book for instance. Recounting this, and the way the dataset was especially subject to spam, is a reminder that the logic social media platforms operate on doesn’t stop. Even during the expression of dissent or outrage, not only are the platforms themselves profiting from these expressions, users are also incorporating their logics to promote their own position.
+The annotation of `sociality` was included as it points to language use that is clustered due to the corpora being from social media. The use of words `like`, `share`, `follow`, `post`, though they have become more used generally in language, would not be as present within a book for instance. Recounting this, and the way the dataset was especially subject to spam, is a reminder that the logic social media platforms operate on doesn’t stop. Even during the expression of dissent or outrage, not only are the platforms themselves profiting from these expressions, users are also incorporating their logics to promote their own position.
 
 ### Co-occurrences
 
@@ -153,7 +153,7 @@ The co-occurrences presented here are as expected. Utterances of `trust` are mos
 
 
 ## Summary
-Beyond being a DIY exercise, investigating a topic through Twitter that has already been covered extensively within the news doesn’t seem to yield much new information worth noting. We can see people are talking about a breach of trust, #deleteFacebook, and the data scandal in relation to politics – as was reported. Evaluating the methods used has also provided challenges. Particularly with the neural embeddings as in reduced dimensional space the data in visualisations is subject to compression. Overall this as provided a way to think about the initial reactions to the topic visually. Its results will be used for further discussion in a later post.
+Beyond being a DIY exercise, investigating a topic through Twitter that has already been covered extensively within the news doesn’t yield much new information worth noting. We can see people are talking about a breach of trust, #deleteFacebook and the data scandal in relation to politics – as was reported. Evaluating the methods used has also provided challenges. Particularly with the neural embeddings, as in reduced dimensional space, the data in visualisations are subject to compression. Overall this has provided a way to think about the initial reactions to the topic visually and differently to other approaches that have been taken within this blog. Its results will be used for further discussion in a later post.
 
 ---
 
@@ -163,10 +163,11 @@ Beyond being a DIY exercise, investigating a topic through Twitter that has alre
 
 ### References
 
-* Grefenstette, E. 2017. *Lecture 2a- Word Level Semantics*. Available from: [lectures/Lecture 2a- Word Level Semantics.pdf at master · oxford-cs-deepnlp-2017/lectures · GitHub](https://github.com/oxford-cs-deepnlp-2017/lectures/blob/master/Lecture%202a-%20Word%20Level%20Semantics.pdf)
-* Jurafsky, D. and James, M. 2009. *Speech and Language Processing*. Second Ed. London, UK: Pearson Education Ltd ([Third Ed is available here online]( https://web.stanford.edu/~jurafsky/slp3/ed3book.pdf))
-* Maaten, Laurens van der, and Geoffrey Hinton. 2009. Visualizing data using t-SNE. *Journal of Machine Learning Research*. pp.2579-2605. Available from:[http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf](http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf)
-* Mikolov, T. Chen, K. et al. 2013. *Efficient Estimation of Word Representations in Vector Space*. Availible from: https://arxiv.org/abs/1301.3781
+* Grefenstette, E. 2017. *Lecture 2a- Word Level Semantics*. [Online]. Available from: [lectures/Lecture 2a- Word Level Semantics.pdf at master · oxford-cs-deepnlp-2017/lectures · GitHub](https://github.com/oxford-cs-deepnlp-2017/lectures/blob/master/Lecture%202a-%20Word%20Level%20Semantics.pdf)
+* Jurafsky, D. and James, M. 2009. *Speech and Language Processing*. Second Ed. London, UK: Pearson Education Ltd. ([Third Ed is available here online]( https://web.stanford.edu/~jurafsky/slp3/ed3book.pdf))
+* Maaten, Laurens van der, and Geoffrey Hinton. 2009. Visualizing data using t-SNE. *Journal of Machine Learning Research*. pp.2579-2605. [Online].  Available from:[http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf](http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf)
+* Mikolov, T. Chen, K. et al. 2013. *Efficient Estimation of Word Representations in Vector Space*. [Online]. Available from: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
+* Wattenberg, et al., 2016. *How to Use t-SNE Effectively*, Distill. [Online]. Available from: [http://doi.org/10.23915/distill.00002](http://doi.org/10.23915/distill.00002)
 * [Vector Representations of Words  -  TensorFlow](https://www.tensorflow.org/tutorials/word2vec)
 * [Word2Vec Tutorial - The Skip-Gram Model · Chris McCormick](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
 
@@ -180,3 +181,4 @@ Beyond being a DIY exercise, investigating a topic through Twitter that has alre
 * [LDA2vec: Word Embeddings in Topic Models (article) - DataCamp](https://www.datacamp.com/community/tutorials/lda2vec-topic-model)
 * [GitHub - MaxwellRebo/awesome-2vec: Curated list of 2vec-type embedding models](https://github.com/MaxwellRebo/awesome-2vec)
 * [Anything2Vec, or How Word2Vec Co nquered NLP](http://nlp.town/blog/anything2vec/)
+
