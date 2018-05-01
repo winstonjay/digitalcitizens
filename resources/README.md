@@ -1,4 +1,4 @@
-## Resources
+# Resources
 This folder contains a number of static resources script files.
 
 * `badwords.txt` - list of English swear words, insult words etc. compiled from various resources over extended time period. Some are just silly tbh.

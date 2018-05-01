@@ -1,0 +1,9 @@
+tf_tools
+========
+
+They are mostly utility scripts for loading and inspecting already built
+Tensorflow models.
+
+`checkpoint_utils.py` and `inspec_checkpoint` come from the Tensorflow authors
+and are licensed under the Apache License, Version 2.0. License details are at
+the top of each file as they were found.
