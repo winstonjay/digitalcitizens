@@ -19,7 +19,7 @@ then
     exit
 fi
 
-ARCHIVE_DIR="pages/archive/pages"
+ARCHIVE_DIR="pages/archive/"
 
 if [ ! -d $ARCHIVE_DIR ]
 then
@@ -47,12 +47,23 @@ function get_col {
 
 function git_log_message_to_json {
     git log -1 --pretty=format:"{\
-        \"filename\":\"$2\",\
+        \"id\":\"$3\",\
+        \"src\":\"$2\",\
         \"user\":\"%an\",\
         \"comment\":\"%s\",\
         \"created\":\"%ai\"\
     }" $1
 }
+
+function print_front_matter {
+    printf "%s\nlayout: page\npermalink: %s\n%s\n\
+<style>html{margin-top: 27px}</style>\
+<div class=\"hist\">version: %s.\
+    <a href=\"/digitalcitizens/about/\">back to latest</a>\
+</div>\n\n\
+<h1 class=\"post-title\">About</h1>" "---" $1 "---" $2
+}
+
 
 HASHES=$(git_log_short $FILENAME | get_col 1)
 HIST_CONTENTS="["
@@ -64,18 +75,23 @@ do
     then
         HIST_CONTENTS="$HIST_CONTENTS, "
     fi
-    INDEX_OUT=$(printf %03d $INDEX)
-    OUT_FILEPATH="archive/$FILENAME.$INDEX_OUT.$HASH"
-
+    # INDEX_OUT=$(printf %03d $INDEX)
+    OUTNAME=$(basename -- "$FILENAME")
+    OUT_FILEPATH="pages/archive/$HASH.$OUTNAME"
+    ID_STR=$(basename -- "$OUT_FILEPATH")
+    WEB_PATH="$OUT_FILEPATH.html"
     # create the history file.
     echo "Making file: $OUT_FILEPATH from commit $HASH:$FILENAME"
-    git show $HASH:$FILENAME > $OUT_FILEPATH
+
+    print_front_matter $WEB_PATH $ID_STR > $OUT_FILEPATH
+    git show "$HASH:$FILENAME" | awk 'NR>5' >> $OUT_FILEPATH
 
     # build up json history string.
-    ROW=$(git_log_message_to_json $HASH $OUT_FILEPATH)
+
+    ROW=$(git_log_message_to_json $HASH $WEB_PATH $ID_STR)
     HIST_CONTENTS="$HIST_CONTENTS $ROW"
     let INDEX++
 done
 
 # write the commit meta data to a nicely formated json
-echo "$HIST_CONTENTS ]" | python -m json.tool > assets/history.json
+echo "$HIST_CONTENTS ]" | python -m json.tool > _data/history.json

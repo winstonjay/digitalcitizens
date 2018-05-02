@@ -82,3 +82,24 @@ table {font-size: 0.7em }
         padding: 0 8px;
     }
 }
+
+// history
+
+.hist {
+    position: absolute;
+    top: 0;
+    background-color: #c0392b;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    padding: 0 16px;
+    height: 32px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.hist a {
+    color: #fff;
+}
