@@ -1,9 +1,20 @@
+# archive1.sh:
+# Take screenshot fof jekyll site homepage.
 # NOTE Requirements:
 #     - selenium
 #     - chromium webdriver binary to be installed.
 #     - **localhost (jekyll) webserver to be running when using this script.
-#
-# NOTE: this script is mirrored within archive.sh
+set -e
+
+# start jekyll server.
+bundle exec jekyll serve &
+
+sleep 3
+echo "waited 3 seconds..."
+
+# take screenshot of the index page.
+echo "executing pyton script to screenshot index page..."
+/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6 << "EOF"
 """Take a screenshot of the index page and save it to screenshots"""
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
@@ -34,3 +45,9 @@ driver.execute_script("document.body.style.position = 'fixed';"
 # make screenshot.
 driver.save_screenshot("assets/screenshots/latest.png")
 driver.quit()
+EOF
+
+# kill the webserver.
+echo "killing jekyll server process $!"
+kill $!
+exit

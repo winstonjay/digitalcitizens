@@ -44,3 +44,4 @@ exclude:
   - vendor/ruby/
   - newpost.pl
   - archive.py
+  - scripts/
