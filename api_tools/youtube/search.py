@@ -69,12 +69,18 @@ def youtube_topic_id(topic):
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser()
-    argparser.add_argument("--q", help="Search term", type=str, required=True)
-    argparser.add_argument("--max_results", help="Max results", type=int, default=50)
-    argparser.add_argument("--lang", help="most relevant language", type=str, default="en")
-    argparser.add_argument("--type", help="type of content to search", type=str, default="video")
-    argparser.add_argument("--period", help="Number of days to span search accross.", type=int)
-    argparser.add_argument("--start_date", help="date to start period", type=str)
+    argparser.add_argument(
+        "--q", help="Search term", type=str, required=True)
+    argparser.add_argument(
+        "--max_results", help="Max results", type=int, default=50)
+    argparser.add_argument(
+        "--lang", help="most relevant language", type=str, default="en")
+    argparser.add_argument(
+        "--type", help="type of content to search", type=str, default="video")
+    argparser.add_argument(
+        "--period", help="Number of days to span search accross.", type=int)
+    argparser.add_argument(
+        "--start_date", help="date to start period", type=str)
     args = argparser.parse_args()
 
     try:

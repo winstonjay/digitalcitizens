@@ -5,6 +5,7 @@ Derivation of R.A.K.E (rapid automatic keyword extraction) algorithm as
 described in:
     Rose, S. Engel, D. Cramer, N. and Cowley, W. 2010.
     Automatic keyword extraction from individual documents
+    https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents
 
 This algorithm needs stopwords and punctuation to be present within the data.
 '''
@@ -110,7 +111,7 @@ ignore_terms = ("day", "year", "last", "years", "first")
 # refereneced document frequency: rdf(k) = how many documents a candidate
 # keyword has appeared in.
 #
-# refereneced document frequency: edf(k) = how many documents a keyword has
+# extraction document frequency: edf(k) = how many documents a keyword has
 # been extracted from.
 #
 # exclusiveness: exc(k) = edf(k) / rdf(k)

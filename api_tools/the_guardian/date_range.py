@@ -10,7 +10,7 @@ Example use:
     $ python date_range.py -a="2018-03-17" -z="2018-03-24" -q="cats"
 
 For more arg details:
-    $ python single.py --help
+    $ python date_range.py --help
 
 For api use details:
     http://open-platform.theguardian.com/
