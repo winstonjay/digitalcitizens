@@ -2,7 +2,10 @@
 layout: page
 permalink: pages/archive/dbde028.about.md.html
 ---
-<style>html{margin-top: 27px}</style><div class="hist">version: dbde028.about.md.    <a href="/digitalcitizens/about/">back to latest</a></div>
+<style>html{margin-top: 27px}</style>
+<div class="hist">version: dbde028.about.md
+    <a href="/digitalcitizens/about/">back to latest</a>
+</div>
 
 <h1 class="post-title">About</h1>
 {{ site.description }}

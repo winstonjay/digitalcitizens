@@ -8,6 +8,7 @@ Presenting a series of forthcoming posts related to the recent Facebook and Camb
 
 {% assign static_path = "assets/imgs/data-politics-and-democracy-part-1" | absolute_url %}
 
+
 The scandal involving Cambridge Analytica’s apparent miss-use of Facebook data is an especially relevant piece of current affairs for an investigation of contemporary civic issues. It belongs to the wider issues surrounding data regulations, the economic foundations of web 2.0 and normative democratic ideals.
 
 **TODO**: continue introduction.

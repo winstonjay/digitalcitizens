@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data, politics and democracy part 2: Twitter reactions to Facebooks ‘data leak’"
+title:  "Data, politics and democracy part 2: Twitter reactions to Facebooks so called ‘data leak’"
 date:   2018-04-12 23:22:45 +0100
 ---
 Using data collected whilst the Facebook/Cambridge Analytica story was first gaining momentum, this post looks at the responses made to it via Twitter. Experimenting word embeddings and other computational methods, it aims to map key dimensions that highlight the contextual relationships between different sentiments across the dataset.
@@ -32,7 +32,7 @@ Though it may provide means for investigating sentiment on an international scal
 For this and the reasons discussed above, though not perfect, Twitter seems like a more appropriate tool to learn about public interaction with current affairs.
 
 ## Approach
-Approximately 500,000 tweets were collected using Twitters [streaming API ](https://developer.twitter.com/en/docs/tweets/filter-realtime/overview) between the 20th and the 23rd of March 2018, filtering for the query terms `Facebook` and `Cambridge Anaylitica`. This was just after the Guardian’s [initial story](https://www.theguardian.com/news/2018/mar/17/data-war-whistleblower-christopher-wylie-faceook-nix-bannon-trump?CMP=twt_gu) was released and was gaining traction across social and broadcast media.
+Approximately 500,000 tweets were collected using Twitters [streaming API ](https://developer.twitter.com/en/docs/tweets/filter-realtime/overview) between the 20th and the 23rd of March 2018, filtering for the query terms `Facebook` and `Cambridge Anaylitica`. This was just after the Guardian’s [initial story](https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election) was released and was gaining traction across social and broadcast media.
 Along with counting hashtag frequencies and word co-occurrences, visualisations generated from word embeddings will be used to form a distant reading of the semantic relationships within the dataset. This experimentation provides a contextual overview of the response to help identify specific attributes for moving forward.
 
 ### Word embeddings
@@ -101,7 +101,7 @@ Computing this, as is expected from this completely constructed example, `kitten
 Beyond count based methods neural embeddings have also been widely employed to predict vector representations. Using this method embeddings are normally represented by a matrix of target and context words. Two of the main modelling strategies here, are the Continuous Bag-of-words model (CBOW) and the Skip-gram model. They function in pretty much opposite ways. Here is an illustration comparing both:
 
 <img src="{{ static_path }}/skipgram.jpg"/>
-<small>Image from: (Mikolov, T. Chen, K. et al. 2013) [https://arxiv.org/abs/1301.3781]( https://arxiv.org/abs/1301.3781)</small>
+<small>Image from: (Mikolov, T. Chen, K. et al. 2013) [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)</small>
 
 The CBOW model tries to predict the target word from a given set of context words and the Skip-gram model tries to predict the context words given a target word. In this post the Skip-gram model is used, implemented with the machine learning framework [Tensorflow](https://www.tensorflow.org/). This was done with reference to their demonstration [word2vec_basic.py]( https://github.com/tensorflow/tensorflow/blob/r1.7/tensorflow/examples/tutorials/word2vec/word2vec_basic.py). Alterations to the original file have been made to pre-process the data differently and carry out some additional steps.
 
@@ -157,7 +157,7 @@ Beyond being a DIY exercise, investigating a topic through Twitter that has alre
 
 ---
 
-#### Read Next: [Part 3: ?]({{ site.baseurl }}{% post_url 2018-04-12-data-politics-and-democracy-part-3 %})
+#### Read Next: [Part 3: Analysis of The Guardian's content]({{ site.baseurl }}{% post_url 2018-04-20-data-politics-and-democracy-part-3 %})
 
 ---
 

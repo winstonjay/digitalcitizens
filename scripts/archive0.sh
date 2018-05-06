@@ -57,9 +57,9 @@ function git_log_message_to_json {
 
 function print_front_matter {
     printf "%s\nlayout: page\npermalink: %s\n%s\n\
-<style>html{margin-top: 27px}</style>\
-<div class=\"hist\">version: %s.\
-    <a href=\"/digitalcitizens/about/\">back to latest</a>\
+<style>html{margin-top: 27px}</style>\n\
+<div class=\"hist\">version: %s\n\
+    <a href=\"/digitalcitizens/about/\">back to latest</a>\n\
 </div>\n\n\
 <h1 class=\"post-title\">About</h1>" "---" $1 "---" $2
 }
