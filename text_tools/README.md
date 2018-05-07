@@ -1,5 +1,4 @@
-
-# Text tools
+# Text tools
 
 This folder contains scripts for pre-processing data and some implementations of some NLP algorithms. Some notable files:
 

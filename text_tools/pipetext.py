@@ -9,7 +9,7 @@ import json
 import re
 
 
-def read_data(filename, outfilename):
+def write_data(filename, outfilename):
     "read first "
     outfile = open(outfilename, mode="w+")
     print("Started writing to file:", outfilename)
@@ -26,11 +26,6 @@ def read_data(filename, outfilename):
     outfile.close()
     print("Finished writing to file:", outfilename)
     print("Total tweets:", i)
-
-
-filename = "../data/fb_ca_march.zip"
-
-outfile = "../data/tweet1"
 
 
 def extract_line(line):
@@ -52,10 +47,16 @@ cat = " ".join
 
 rx = re.compile(r"[#@]\w+|\w+")
 
-stop_words_path = "../resources/stopwords.txt"
-
-stop_words = set(open(stop_words_path).read().split())
+stop_words = set(open("../resources/stopwords.txt").read().split())
 
 
 if __name__ == '__main__':
-    read_data(filename, outfile)
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-f", "--file", type=str, help="input filename", required=True)
+    parser.add_argument(
+        "-o", "--out", type=str, help="output filename", required=True)
+    args = parser.parse_args()
+
+    # perform all ops
+    write_data(args.file, args.out)

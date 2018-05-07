@@ -1,22 +1,28 @@
-from __future__ import division
+'''
+graph2topics.py:
+
+transfer topic graph back into a list of topics. this is kind of stupid but
+should be easier that the alternatives.
+'''
 from __future__ import print_function
 
 import json
 import collections
 import random
-# transfer topic graph back into a list of topics. this is kind of stupid but
-# should be easier that the alternatives.
 
-data_path = "../../gh-pages/_data/wordgraph.json"
-out_path = "../../gh-pages/_includes/topictable.html"
-
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "-f", "--file", type=str, help="input filename", required=True)
+parser.add_argument(
+    "-o", "--out", type=str, help="output filename", required=True)
+args = parser.parse_args()
 
 def shuffled(data):
     data_copy = data[:]
     random.shuffle(data_copy)
     return data_copy
 
-with open(data_path) as fp:
+with open(args.file) as fp:
     data = json.load(fp)
     links, nodes = data['links'], data['nodes']
 
@@ -46,7 +52,7 @@ for k, vals in topics.items():
 buffer.append("</div>")
 
 
-with open(out_path, "w") as fp:
+with open(args.out, "w") as fp:
     fp.write('\n'.join(buffer))
 
-print("wrote to file:", out_path)
+print("wrote to file:", args.out)

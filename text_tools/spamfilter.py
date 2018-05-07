@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+'''
+spamfilter.py
 
+Performs basic spam filtering on tweets using hashtag frequencies.
+
+'''
 # TODO: this is a bit of a quick fix for now. If needed in the future
 # work out a better strategy and refine implementation.
-
-'''Performs basic spam filtering on tweets using hashtag frequencies.'''
-
 import collections
 
 class HashtagSpamFilter(object):

@@ -4,7 +4,7 @@ topic_graph.py:
 construct a graph in the form of links and nodes into json format
 for use within javascript applications (d3.js in mind).
 
-kinda a quick make do for now.
+kinda a quick make do for now. see command line --help for io args.
 
 If the LDA model is taking too long for your liking, reduce the `max_iter` to
 below 10 or reduce the `max_features`. It wil
@@ -71,6 +71,11 @@ def inspect_model(model, names, n_samples):
 
 
 def build_graph(model, names, n_samples):
+    '''given a sklearn.decomposition.LatentDirichletAllocation model and its
+    cooresponding vocabulary names, generated two lists of dictionaries one
+    containing nodes, the other links (edges). Nodes and edges are generated
+    from the LatentDirichletAllocation model as a bipartide graph linking
+    overlapping terms within different topics.'''
     index = {}
     index_n = 0 # keep track of the node indexes.
     (nodes, links) = ([], [])
@@ -94,21 +99,20 @@ def build_graph(model, names, n_samples):
 
 
 
-# initialiser functions are used instead of classes as a short cut
-# to create consitent representations of Nodes and Links.
+# initialiser functions are used instead of classes as a short cut to create
+# consitent representations of Nodes and Links. This was merely to make
+# serialisation into json format easier.
 def Node(name, root, weight):
     "pusedo Node struct constructor"
     return dict(name=name, root=root, weight=weight)
 
 def Link(source, target, weight, group):
     "pusedo Link struct constructor"
-    return dict(source=source,
-                target=target,
-                weight=weight,
-                group=group)
+    return dict(source=source, target=target,
+                weight=weight, group=group)
 
 def norm_scale(x, scale=True):
-    "apply min max normalization"
+    "apply min max normalization to the weights of nodes or edges"
     X = np.array([v['weight'] for v in x])
     X = 1 + np.log(X) # apply sub-linear scaling
     X = (X - X.min()) / (X.max() - X.min())
@@ -120,15 +124,24 @@ letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 if __name__ == "__main__":
-    # eg usage. Updata as you need.
+    # Basic usage illustrated here.
     import json
     import pandas as pd
 
-    df = pd.read_csv("../data/twitter/tweets_large_train", na_filter=False)
+    parser = argparse.ArgumentParser(
+        description="construct a graph in the form of links and nodes into"
+                    "json format for use within javascript applications")
+    parser.add_argument(
+        "-f", "--file", type=str, help="input filename", required=True)
+    parser.add_argument(
+        "-o", "--out", type=str, help="output filename", required=True)
+    args = parser.parse_args()
 
+    # read from csv using pandas just because
+    df = pd.read_csv(args.file, na_filter=False)
     graph = topic_graph(df.text)
-    out = "../../gh-pages/_data/wordgraph.json"
 
-    with open(out, "w") as f:
+    # write results to output file
+    with open(args.out, "w") as f:
         json.dump(graph, f, indent=4, sort_keys=True)
     print("saved result to", out)

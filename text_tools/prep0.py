@@ -1,5 +1,7 @@
 '''
+prep0.py
 
+preprocess twitter data generated from api_tools/twitter_go_v2.
 
 '''
 # tsv structures
@@ -124,9 +126,15 @@ def extract_user(user):
 # keep track of users and once we have finished writing the tweets write the
 # users to a sperate tsv file.
 
-source_filename = "../data/final/data.zip"
-tweets_filename = "../data/final/tweets_small.tsv"
-users_filename  = "../data/final/users_small.tsv"
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "-f", "--file", type=str, help="input filename", required=True)
+parser.add_argument(
+    "-u", "--users_path", type=str, help="output filename", required=True)
+parser.add_argument(
+    "-t", "--tweets_path", type=str, help="output filename", required=True)
+args = parser.parse_args()
 
 
 users = {}  # dictionary of all the users we see in the collection.
@@ -141,13 +149,13 @@ dropout_rate = 0.8 # there are 2 million tweets and we dont need all of them
 dropped = 1
 real_total = 1
 
-tweets_file = open(tweets_filename, "w")
+tweets_file = open(args.tweets_path, "w")
 
 tweets_head = tcat(
     "puid created_at user_puid tweet tags possibly_sensitive lang".split(" "))
 
-print("writing tweets file:", tweets_filename)
-with zipfile.ZipFile(source_filename) as z:
+print("writing tweets file:", args.tweets_path)
+with zipfile.ZipFile(args.file) as z:
     files_count = len(z.namelist()) -1
     tweets_file.write(tweets_head)
     tweets_file.write("\n")
@@ -169,9 +177,9 @@ print("- " * 40)
 print("total tweets", total_tweets)
 print("total users", len(users))
 print("- " * 40)
-print("writing users file:", users_filename)
+print("writing users file:", args.users_path)
 
-with open(users_filename, "w") as users_file:
+with open(args.users_path, "w") as users_file:
     fieldnames = list(user_rows[0].keys())
     writer = csv.DictWriter(users_file, fieldnames, delimiter='\t')
     writer.writeheader()

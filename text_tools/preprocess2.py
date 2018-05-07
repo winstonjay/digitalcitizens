@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+'''
+preprocess2.py
+
+proccess twitter data collected twitter_go_v1 tool
+
+usage: update
+'''
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -10,13 +17,14 @@ import json
 import re
 import os
 import zipfile
+import argparse
 
 from spamfilter import HashtagSpamFilter
 
 
 # TODO: restructure and refactor spam detection to loop though the data first
 # before writing any data. This is kinda a mess but probs wont fix.
-def writer(filename, out_filename, spam_filter):
+def write_data(filename, out_filename, spam_filter):
     '''read zip archive of .ndjson files and write to a single file then
     compress into a new zip archieve.'''
     # set up scoped function varibles
@@ -66,7 +74,7 @@ def extract_tweets(f, spam_filter):
     for line in f:
         t = json.loads(line)
         tags, tags_n = extract_hashtags(t["extended_tweet"]["entities"])
-        if not tags or spam_filter.filter_tags(tags, tags_n)):
+        if not tags or spam_filter.filter_tags(tags, tags_n):
             continue
         text = extract_text(t["extended_tweet"]["full_text"])
         if not text:
@@ -109,10 +117,13 @@ def is_ascii(s):
 
 
 if __name__ == '__main__':
-    # io params
-    filename  = "../data/raw/fb_ca_march.zip"
-    outfile   = "../data/rtweet01.tsv"
-    spam_filter = HashtagSpamFilter()
+    parser = argparse.ArgumentParser(
+        description="proccess twitter data collected twitter_go_v1 tool")
+    parser.add_argument(
+        "-f", "--file", type=str, help="input filename", required=True)
+    parser.add_argument(
+        "-o", "--out", type=str, help="output filename", required=True)
+    args = parser.parse_args()
 
-    # do your thang
-    writer(filename, outfile, spam_filter)
+    write_data(args.file, args.out, HashtagSpamFilter())
+    print("done!")

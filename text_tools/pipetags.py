@@ -9,7 +9,7 @@ import json
 import re
 
 
-def read_data(filename, outfilename):
+def write_data(filename, outfilename):
     "Read and write out all tweet tags line by line"
     outfile = open(outfilename, mode="w+")
     with zipfile.ZipFile(filename) as z:
@@ -33,8 +33,11 @@ def extract_tag(line):
 cat = " ".join
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-f", "--file", type=str, help="input filename", required=True)
+    parser.add_argument(
+        "-o", "--out", type=str, help="output filename", required=True)
+    args = parser.parse_args()
 
-    filename = "../data/fb_ca_march.zip"
-    outfile = "../data/tags0"
-
-    read_data(filename, outfile)
+    write_data(args.file, arges.out)
