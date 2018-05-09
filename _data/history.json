@@ -1,5 +1,12 @@
 [
     {
+        "comment": "2 new articles (ish). added to methods and archive pages also",
+        "created": "2018-05-06 01:02:32 +0100",
+        "id": "b719ed3.about.md",
+        "src": "pages/archive/b719ed3.about.md.html",
+        "user": "Karl Sims"
+    },
+    {
         "comment": "added archive to about page",
         "created": "2018-05-02 03:17:05 +0100",
         "id": "55185ac.about.md",
