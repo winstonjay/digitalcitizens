@@ -17,3 +17,6 @@ Contents of notable directories can be listed as follows, each of these will hav
 
 [`text_tools`](text_tools/) contains implementations of some natural processing algorithms and data pre-processing scripts.
 
+**last updated image:**
+
+![hompage](latest.png)
