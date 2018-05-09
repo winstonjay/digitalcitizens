@@ -54,7 +54,8 @@ parser.add_argument(
 args = parser.parse_args()
 
 params = {
-    # 'show-fields': 'all',
+    'show-fields': 'all',
+    # 'from-date': "2010-01-01",
     'api-key': api_key,
     'show-tags': 'tone,keyword',
     'show-elements': 'all',
