@@ -27,9 +27,9 @@ You are here. This will be whatever this page is right now.
 
 Initial reactions made via twitter will be studied whilst experimenting with word embedding’s. This aims to map contextual relationships within the response.
 
-**Part 3: The Guardian’s story**
+**Part 3: Analysis of The Guardian's content**
 
-**Part 4: Further analysis and theoretical considerations**
+**Part 4: Reflections**
 
 
 ---

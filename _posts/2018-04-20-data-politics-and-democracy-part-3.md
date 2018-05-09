@@ -31,16 +31,18 @@ Due to its relative simplicity, the RAKE algorithm and other related functions w
 
 ## Analysis
 ### Article Keywords
+
 **Manually generated**
+
 Looking at the human generated keywords tells about not only about the articles but also the internal practices of the organisation. Though through being query the terms, `Cambridge Analytica` and `Facebook` naturally top the chart, most of the top items are meta keywords that describe overarching collections of content like `Technology` or `UK news`. The categorisation of news types geographically can tell us more about the priorities of the content producers (eg: ‘US news’). This can be described here as *UK news* `>` *World news* `>` *US news*. Because of this, although the US 2016 elections where a key part of the topic, we are more likely to British issue like Brexit reflected.
 
 <img src="{{ static_path }}/tags.png">
 <figcaption> <strong>Figure 1:</strong> Guardian Keywords tagged by Organisation.</figcaption>
 
-With knowledge of what this data concerns we could use these tags to inversely query content over a longer period within the paper. Possible topics of interest can be listed as, `Data protection`, `privacy`, `social media`. Seeing how these topics have evolved over time might be an interesting line to follow in establishing the publishing patterns.
-**TODO**: maybe evaluate time-series data.
+With knowledge of what this data concerns we could use these tags to inversely query content over a longer period within the paper. Possible topics of interest can be listed as, `Data protection`, `privacy`, `social media`. Seeing how these topics have evolved over time might be an interesting line to follow in establishing the publishing patterns. This will be disc
 
 **RAKE results**
+
 Comparing the RAKE key phrases with the human generated ones, the differences in style are apparent. The human keywords provide quite clear and considered meta data whose core function it to group content systematically. Here, though following qualitatively similar topics, we finding structure in the natural language of the news reporters. For such a simple approach, it does appear to give good results. One noticeable caveat its failure to capture single word key phrases well – questionably `Brexit` is missing here. We can see also the tendency for it to be greedy and present longer phrases such as `50m Facebook profiles` over more simply `Facebook`.
 
 <img src="{{ static_path }}/rakekw.png">
@@ -53,17 +55,32 @@ Questions also arose in how much of the input text the algorithm should be appli
 Generating TF-IDF scores for unigrams and bigrams across both datasets, comparisons of the content can be made (<span style="color:#018ed5"> █ The Guardian</span>, <span style="color:#e91f63;"> █ Twitter</span>). With similar pre-processing steps being taken with each, an initial observation finds differences in structure and consistency. Thus, the twitter data has far more low information words and media specific language (e.g. retweeted). Query terms within the Twitter data seem to be far more impactful to the scores generated. As an item of content only needs one occurrence of a query term to be collected, the ratio of query terms to non-query terms is obviously higher in shorter texts. A possible way to combat this might be to normalise their scores based on content length, though this has not been applied here.
 
 <img src="{{ static_path }}/ngrams1.png">
-<figcaption>Top 20 unigrams and bigrams for Gaurdian articles.</figcaption>
+<figcaption><strong>Figure 3:</strong>Top 20 unigrams and bigrams for Gaurdian articles.</figcaption>
 <img src="{{ static_path }}/twitter.png">
-<figcaption>Top 20 unigrams and bigrams for Twitter dataset.</figcaption>
+<figcaption><strong>Figure 4:</strong>Top 20 unigrams and bigrams for Twitter dataset.</figcaption>
 
 As noted previously the Guardian content is more concerned with UK affairs, like the `vote leave` campaign. Perhaps having more American users, Brexit related affairs do not show up at all within the Twitter rankings here. Though there might not have been time for stories to circulate and articles here do not represent total media coverage, one of the key actors Aleksandr Kogan seems to not have received as much attention from Twitter users. To some extent we could argue that the main issue is the general social practices facilitated by Facebook between data and political organisations. Facebook Is the only actor here that has a consistent relationship with society, and naturally should receive the most attention.
 
-Though better representations could have been achieved with the Twitter results it was decided here not to pursue even more cleaning steps. As noted before, this dataset was especially messy. Working with the Guardian articles though needing some steps was a real breath of fresh air.
+Though better representations could have been achieved with the Twitter results it was decided here not to pursue even more cleaning steps. As noted before, this dataset was especially messy. Working with the Guardian articles, though needing some pre-processing steps was a real breath of fresh air.
+
+
+### Time series data over the last 8 years
+Working with some of the top keywords generated by the paper, additional data was collected from the Guardians API. This queried posts between `2010` and the present. A times-series of articles per query over time can be detailed below.
+
+<img src="{{ static_path }}/timeseries.png">
+<figcaption><strong>Figure 5:</strong>Time series of query result counts</figcaption>
+
+Using the tiles of the articles to determine subtopics within the query the most related bi-grams can also be shown below. Only `privacy` and `data protection` we displayed as the others were more generalised and of less interest.
+
+<img src="{{ static_path }}/privacy.png">
+<figcaption><strong>Figure 5:</strong>Most common bi-grams per query (privacy, data protection)</figcaption>
+
+It seems ‘phone hacking’ and ‘Edward Snowden’ are top of the list. Looking back at the time series data there only seems to be a small peak in 2011 at the time of the phone hacking scandal whilst around the time of the Snowden leak there seems to be a great peak in data protection, privacy and the internet. Facebook seems to have got most attention mid 2016 then peeked up again recently. It’s unclear to my knowledge what happened in 2015 about data protection, but it seems like someone must have had a wild month or two. Another point of interest is that since 2016 Facebook maintained more coverage that the Internet more generally, something that feeds into the narrative that the internet is becoming merely the walled gardens of the giant social media platforms.
+
 
 
 ---
-#### Read Next: [Part 4: ???]({{ site.baseurl }}{% post_url 2018-05-01-data-politics-and-democracy-part-4 %})
+#### Read Next: [Part 4: Reflections]({{ site.baseurl }}{% post_url 2018-05-01-data-politics-and-democracy-part-4 %})
 
 ---
 

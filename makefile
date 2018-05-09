@@ -1,0 +1,4 @@
+
+
+commit-%:
+	@echo "$(@:commit-%=%)"
