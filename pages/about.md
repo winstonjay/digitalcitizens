@@ -6,7 +6,7 @@ permalink: /about/
 
 {{ site.description }}
 
-Content posted here constitutes a singular project between January and May 2018. The posts are in order of most recent first but best read bottom up.
+Content posted here constitutes a singular project between January and May 2018.
 
 **Project sources and Github repository:**
 

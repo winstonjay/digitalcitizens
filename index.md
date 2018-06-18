@@ -3,4 +3,5 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+tagline: A blog concerning citizen media and democracy in the digital age
 ---
